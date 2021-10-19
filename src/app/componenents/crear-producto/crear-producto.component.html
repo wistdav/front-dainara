@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8.offset-lg">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{titulo | uppercase}}</span>
+                    <form class="mb-3" [formGroup]="productoform" (ngsubmit)="agregarparques()">
+
+                        <div class="mb-3">
+                            <input type="text" formControlName="nombre"
+                            class="form-control form-control-lg" placeholder="Parques">
+                            <div class="text-danger"
+                            *ngIf="productoform.get('nombre')?.hasError('required') && productoform.get('nombre')?.touched">
+                                <span>el nombre del parque <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <input type="text" formControlName="ubicacion"
+                            class="form-control form-control-lg" placeholder="ubicacion">
+                        </div>
+    
+                        <div class="mb-3">
+                            <input type="text"  formControlName="descripcion"
+                            class="form-control form-control-lg" placeholder="descripcion">
+                        </div> 
+    
+                        <div class="mb-3">
+                            <input type="number" formControlName="precio"
+                            class="form-control form-control-lg" placeholder="precio">
+                        </div>
+    
+
+                
+                        <div class="mb-3">
+                            <button routerLink="/" class="btn btn-info btn-lg float-end">Cancelar</button>
+                            <button type= 'submit' class="btn btn-success btn-lg float-end">Aceptar</button>
+                        </div>
+    
+
+                    </form>
+
+                </div>
+            </div> 
+        </div> 
+    </div> 
+</div>               
+             
+

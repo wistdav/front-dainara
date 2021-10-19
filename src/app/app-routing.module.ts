@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { CrearProductoComponent } from './componenents/crear-producto/crear-producto.component';
 
-const routes: Routes = [];
+//componentes
+import { ListarProductosComponent } from './componenents/listar-productos/listar-productos.component';
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+const routes: Routes = [
+    { path: '', component: ListarProductosComponent},
+    { path: 'crear-producto', component: CrearProductoComponent},
+    { path: 'editar-producto/:id', component: CrearProductoComponent},
+    { path:  '**', redirectTo: '', pathMatch: 'full'}
+    
+  ];
+
+  
+  @NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }
